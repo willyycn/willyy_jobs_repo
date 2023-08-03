@@ -1,0 +1,37 @@
+.todo-main {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 32px;
+    margin-top: 3px;
+}
+
+.todo-main .add-input {
+    height: 28px;
+    font-size: 14px;
+    border: 2px solid #000000;
+    border-radius: 4px;
+}
+
+.todo-main .search-input {
+    float: right;
+    margin-top: 5px;
+    height: 28px;
+    font-size: 14px;
+    border: 2px solid #000000;
+    border-radius: 4px;
+}
+
+.todo-main .btn {
+    display: inline-block;
+    height: 34px;
+    width: 60px;
+    margin: 0 10px;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: #c7e1ff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}

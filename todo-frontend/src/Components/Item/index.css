@@ -1,0 +1,20 @@
+/*item*/
+li {
+    list-style: none;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 5px;
+}
+
+li label {
+    float: left;
+    cursor: pointer;
+}
+
+li:before {
+    content: initial;
+}
+
+li:last-child {
+    border-bottom: none;
+}

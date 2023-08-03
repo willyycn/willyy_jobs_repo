@@ -1,0 +1,15 @@
+/*base*/
+body {
+    background: #f1f1f1;
+}
+
+.todo-container {
+    width: 640px;
+    margin: 0 auto;
+}
+
+.todo-container .todo-wrap {
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+}

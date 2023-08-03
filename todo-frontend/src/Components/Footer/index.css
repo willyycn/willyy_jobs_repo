@@ -1,0 +1,35 @@
+/*footer*/
+.todo-footer {
+    display: grid;
+    padding: 6px;
+    margin-top: 5px;
+    grid-template-columns: 50% 50%;
+}
+
+.todo-footer .todo-left{
+    grid-column: 1;
+}
+
+.todo-footer .todo-right{
+    grid-column: 2;
+}
+
+.todo-footer .todo-left p,hr{
+    margin: 10px 32px;
+}
+
+.todo-footer .todo-right p,hr{
+    margin: 10px 32px;
+}
+
+hr{
+    height: 1px;
+    background-color: black;
+    border: none;
+}
+
+.todo-list {
+    margin: 0 20px;
+    border-radius: 2px;
+    padding: 0;
+}

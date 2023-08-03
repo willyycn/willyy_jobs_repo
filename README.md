@@ -20,8 +20,6 @@ GRANT ALL PRIVILEGES ON DATABASE todos_db TO todo_user;
 ALTER DATABASE todos_db OWNER TO todo_user;
 ```
 
-
-
 ### frontend:
 
 install yarn via:
@@ -33,7 +31,7 @@ npm i yarn -g
 then install the dependencies:
 
 ```
-yarn add axios prop-types
+npm install
 ```
 
 then build the project:
@@ -51,13 +49,13 @@ it would generate the files for the frontend in `build` folder.
 install the dependencies:
 
 ```
-npm i express pm2 pg
+npm install
 ```
 
 run the server via:
 
 ```sh
-pm2 start index.js
+node index.js
 ```
 
 

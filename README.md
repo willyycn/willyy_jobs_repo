@@ -62,5 +62,9 @@ run the server via:
 node index.js
 ```
 
+### improve:
+* adjust delete button to be more attractive
+* make the add task input bar can using "enter" key to create a task
+* automatic add table in postgres
 
 

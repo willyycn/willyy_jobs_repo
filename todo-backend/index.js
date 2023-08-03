@@ -30,21 +30,6 @@ app.get('/tasks', (req, res) => {
         .catch((err) => res.status(500).send(err));
 });
 
-// read complete task
-app.get('/checked_tasks', (req, res) => {
-    const query = 'SELECT * FROM todos_list WHERE finished = true ORDER BY update_time DESC LIMIT 10';
-    db.query(query)
-        .then((result) => res.send(result.rows))
-        .catch((err) => res.status(500).send(err));
-});
-
-app.get('/unchecked_tasks', (req, res) => {
-    const query = 'SELECT * FROM todos_list WHERE finished = false ORDER BY task_detail ASC';
-    db.query(query)
-        .then((result) => res.send(result.rows))
-        .catch((err) => res.status(500).send(err));
-});
-
 // update a task
 app.put('/task/:id/:done', (req, res) => {
     const { id, done } = req.params;

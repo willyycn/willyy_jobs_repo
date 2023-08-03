@@ -9,7 +9,7 @@ export default class Header extends Component{
 
     handleDeleteAllTask = () => {
         const { deleteAllTask } = this.props;
-        if (window.confirm("确定删除?")) {
+        if (window.confirm("delete?")) {
             deleteAllTask();
         }
     }

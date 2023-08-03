@@ -11,6 +11,7 @@ sudo apt update && sudo apt upgrade
 sudo apt install postgresql
 sudo passwd postgres
 su - postgres
+psql
 
 ```
 

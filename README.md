@@ -9,6 +9,9 @@ install postgres db
 ```sh
 sudo apt update && sudo apt upgrade
 sudo apt install postgresql
+sudo passwd postgres
+su - postgres
+
 ```
 
  then create and alter db using below sql code:

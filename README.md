@@ -29,13 +29,13 @@ ALTER DATABASE todos_db OWNER TO todo_user;
 install yarn via:
 
 ```sh
-npm i yarn -g
+sudo npm i yarn -g
 ```
 
 then install the dependencies:
 
 ```
-npm install
+npm i
 ```
 
 then build the project:
@@ -53,7 +53,7 @@ it would generate the files for the frontend in `build` folder.
 install the dependencies:
 
 ```
-npm install
+npm i
 ```
 
 run the server via:

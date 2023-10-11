@@ -17,12 +17,10 @@ LOG_FILE="check.log";
 
 clear;
 echo -e "流媒体解锁测试" && echo -e "流媒体解锁测试" > ${LOG_FILE};
-echo -e " ** 当前版本: v${shell_version}" && echo -e " ** 当前版本: v${shell_version}" >> ${LOG_FILE};
 echo -e " ** 系统时间: $(date)" && echo -e " ** 系统时间: $(date)" >> ${LOG_FILE};
 
 export LANG="en_US";
 export LANGUAGE="en_US";
-export LC_ALL="en_US";
 
 function PasteBin_Upload() {
     local uploadresult="$(curl -fsL -X POST \
@@ -109,8 +107,6 @@ RED='\033[0;31m'
 PLAIN='\033[0m'
 GREEN='\033[0;32m'
 Yellow="\033[33m";
-
-echo -e "** 系统时间: $(date)" && echo -e " ** 系统时间: $(date)" >> ${log};
 
 # Check if curl is installed
 if ! command -v curl &> /dev/null; then

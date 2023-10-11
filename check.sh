@@ -114,6 +114,17 @@ function MediaUnlockTest() {
     MediaUnlockTest_Netflix ${1};
 }
 
+curl -V > /dev/null 2>&1;
+if [ $? -ne 0 ];then
+    echo -e "${Font_Red}Please install curl${Font_Suffix}";
+    exit;
+fi
+
+jq -V > /dev/null 2>&1;
+if [ $? -ne 0 ];then
+    InstallJQ;
+fi
+
 echo " ** 正在测试IPv4解锁情况" && echo " ** 正在测试IPv4解锁情况" >> ${LOG_FILE};
 check4=`ping 1.1.1.1 -c 1 2>&1`;
 if [[ "$check4" != *"unreachable"* ]] && [[ "$check4" != *"Unreachable"* ]];then

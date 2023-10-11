@@ -22,22 +22,6 @@ echo -e " ** 系统时间: $(date)" && echo -e " ** 系统时间: $(date)" >> ${
 export LANG="en_US";
 export LANGUAGE="en_US";
 
-function PasteBin_Upload() {
-    local uploadresult="$(curl -fsL -X POST \
-        --url https://paste.ubuntu.com \
-        --output /dev/null \
-        --write-out "%{url_effective}\n" \
-        --data-urlencode "content@${PASTEBIN_CONTENT:-/dev/stdin}" \
-        --data "poster=${PASTEBIN_POSTER:-MediaUnlock_Test_By_CoiaPrant}" \
-        --data "expiration=${PASTEBIN_EXPIRATION:-}" \
-    --data "syntax=${PASTEBIN_SYNTAX:-text}")"
-    if [ "$?" = "0" ]; then
-        echo -e "${Font_Green}已生成报告 ${uploadresult} ${Font_Suffix}";
-    else
-        echo -e "${Font_Red}生成报告失败 ${Font_Suffix}";
-    fi
-}
-
 function MediaUnlockTest_Netflix() {
     echo -n -e " Netflix:\t\t\t\t->\c";
     local result=`curl -${1} --user-agent "${UA_Browser}" -sSL "https://www.netflix.com/" 2>&1`;
@@ -99,9 +83,6 @@ if [[ "$check6" != *"unreachable"* ]] && [[ "$check6" != *"Unreachable"* ]];then
 else
     echo -e "${Font_SkyBlue}当前主机不支持IPv6,跳过...${Font_Suffix}" && echo "当前主机不支持IPv6,跳过..." >> ${LOG_FILE};
 fi
-echo -e "";
-echo -e "${Font_Green}本次测试结果已保存到 ${LOG_FILE} ${Font_Suffix}";
-cat ${LOG_FILE} | PasteBin_Upload;
 
 RED='\033[0;31m'
 PLAIN='\033[0m'
@@ -120,20 +101,6 @@ if ! command -v curl &> /dev/null; then
     exit 1
   fi
 fi
-
-# Check if grep is installed
-if ! command -v grep &> /dev/null; then
-  echo "grep is not installed. Installing grep..."
-  if command -v yum &> /dev/null; then
-    sudo yum install grep -y
-  elif command -v apt-get &> /dev/null; then
-    sudo apt-get install grep -y
-  else
-    echo "Your system package manager is not supported. Please install grep manually."
-    exit 1
-  fi
-fi
-
 
 
 function UnlockChatGPTTest() {
